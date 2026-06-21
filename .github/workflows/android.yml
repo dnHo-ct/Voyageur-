@@ -25,9 +25,10 @@ jobs:
       with:
         node-version: '22'
 
-    - name: Install Dependencies and Sync Capacitor
+    - name: Install Dependencies, Build Web and Sync Capacitor
       run: |
         npm install
+        npm run build
         npx cap sync
 
     - name: Grant execute permission for gradlew
