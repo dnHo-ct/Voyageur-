@@ -36,9 +36,9 @@ function AppContent() {
   };
 
   return (
-    <div className="flex h-screen bg-slate-50 overflow-hidden">
+    <div className="flex flex-col md:flex-row h-screen bg-slate-50 overflow-hidden">
       <Sidebar />
-      <main className="flex-1 overflow-y-auto">
+      <main className="flex-1 overflow-y-auto p-4 md:p-6">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentView}
@@ -46,6 +46,7 @@ function AppContent() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
+            className="w-full"
           >
             {renderView()}
           </motion.div>
@@ -57,4 +58,4 @@ function AppContent() {
 
 export default function App() {
   return <AppContent />;
-}
+                 }
